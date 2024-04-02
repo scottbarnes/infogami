@@ -291,7 +291,7 @@ class DBSiteStore(common.SiteStore):
                     raise StopIteration
                 c.value = metadata.id
             if c.op == '~':
-                op = Literal('LIKE')
+                op = Literal('ILIKE')
                 c.value = c.value.replace('*', '%').replace('_', r'\_')
             else:
                 op = Literal(c.op)
